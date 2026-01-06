@@ -1,14 +1,10 @@
 #red {
-    color: red;text-align: center;list-style-position: inside;font-size: 35px; flex: 1;min-width: 0;
+    color: red;text-align: center;list-style-position: inside;font-size: 25px; flex: 1;min-width: 0;
 }
 
 a{text-align: center;}
-#s{text-align: center;font-size: 25px}
-.img{text-align: center;
-    /* 新增：消除容器默认的边距/内边距 */
-    margin: 0;
-    padding: 0;
-}
+#s{text-align: center;font-size: 20px}
+.img{text-align: center;margin: 0;padding: 0;}
 #table,form{ margin: 0 auto;text-align: center;}
 #poem{
     font-size: 45px;line-height: 2; font-family: 'Fuzzy Bubbles', cursive;
@@ -16,30 +12,35 @@ a{text-align: center;}
     font-weight: bold;text-shadow: 0 2px 2px rgba(0,0,0,0.1);
 }
 
-/* 轮播容器：宽度100%，消除留白，相对定位 */
+/* 轮播容器：100%宽度，固定比例（16:9），溢出隐藏 */
 #image-slider {
     position: relative;
-    width: 100%;        /* 铺满横向空间，无留白 */
-    margin: 0;          /* 消除默认外边距 */
-    padding: 0;         /* 消除默认内边距 */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    /* 核心：16:9比例（高度=宽度的56.25%），可根据需求改 */
+    aspect-ratio: 16/9;
+    overflow: hidden; /* 裁剪超出容器的图片部分 */
 }
 
-/* 轮播图片：宽度100%铺满容器，高度自适应保持比例 */
+/* 轮播图片：铺满容器，不变形，居中显示 */
 #slider-img {
     width: 100%;
-    height: 1000px;
+    height: 100%;
+    object-fit: cover; /* 关键：按比例填充，超出裁剪，不变形 */
+    object-position: center; /* 裁剪时保留图片中心区域（可改top/bottom） */
     transition: opacity 0.3s ease;
     opacity: 1;
-    display: block;     /* 消除图片底部默认空白 */
+    display: block;
 }
 
-/* 切换按钮通用样式 */
+/* 按钮样式不变 */
 #prev-btn, #next-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
-    padding: 12px 24px; /* 按钮稍大，更易点击 */
+    padding: 12px 24px;
     font-size: 20px;
     cursor: pointer;
     background: rgba(0,0,0,0.5);
@@ -48,18 +49,6 @@ a{text-align: center;}
     border-radius: 5px;
     outline: none;
 }
-
-/* 左按钮：紧贴图片左侧 */
-#prev-btn {
-    left: 20px; /* 稍留一点距离，避免贴太边 */
-}
-
-/* 右按钮：紧贴图片右侧 */
-#next-btn {
-    right: 20px;
-}
-
-#prev-btn:hover, #next-btn:hover {
-    background: rgba(0,0,0,0.7);
-
-}
+#prev-btn {left: 20px;}
+#next-btn {right: 20px;}
+#prev-btn:hover, #next-btn:hover {background: rgba(0,0,0,0.7);}
