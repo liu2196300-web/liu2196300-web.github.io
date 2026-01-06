@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'HIK.jpg',
         'BIKE.jpg',
         'XIAN1.jpg',
-        'XIAN2.jpg'
+        'XIAN2.jpg',
+        '罗阳.jpg'
     ];
     let currentIndex = 0;
 
@@ -45,4 +46,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 关键修改：自动切换间隔改为30秒（30000毫秒）
     setInterval(() => changeImage(currentIndex + 1), 30000);
+
 });
