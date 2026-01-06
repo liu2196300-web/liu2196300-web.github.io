@@ -1,9 +1,9 @@
 #red {
-    color: red;text-align: center;list-style-position: inside;font-size: 25px; flex: 1;min-width: 0;
+    color: red;text-align: center;list-style-position: inside;font-size: 35px; flex: 1;min-width: 0;
 }
 
 a{text-align: center;}
-#s{text-align: center;font-size: 20px}
+#s{text-align: center;font-size: 25px}
 .img{text-align: center;
     /* 新增：消除容器默认的边距/内边距 */
     margin: 0;
@@ -11,7 +11,7 @@ a{text-align: center;}
 }
 #table,form{ margin: 0 auto;text-align: center;}
 #poem{
-    font-size: 45px;line-height: 2; font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 55px;line-height: 2; font-family: 'Fuzzy Bubbles', cursive;
     text-align: center;padding: 5px 0;background-color:red;width: 100%;color: aliceblue;
     font-weight: bold;text-shadow: 0 2px 2px rgba(0,0,0,0.1);
 }
@@ -62,3 +62,4 @@ a{text-align: center;}
 #prev-btn:hover, #next-btn:hover {
     background: rgba(0,0,0,0.7);
 }
+
